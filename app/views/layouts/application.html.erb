@@ -6,17 +6,37 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
       <li>
-        <%= link_to"home",root_path %>
+        <%= link_to"Home",root_path %>
       </li>
-      <!--ログインしていない時は新規登録orログインのリンク、ログインしているときはユーザ詳細、book一覧、ログアウトのリンク-->
-      <!--user詳細、book一覧を作ってから-->
+      <% if user_signed_in? %>
+       <li>
+         <%= link_to"Users",users_index_path %>
+       </li>
+       <li>
+         <%= link_to"Books",books_index_path %>
+       </li>
+       <li>
+         <%= link_to"Log Out", destroy_user_session_path, method: :delete %>
+       </li>
+      <% else %>
+       <li>
+         <%= link_to"About",about_path %>
+       </li>
+       <li>
+         <%= link_to"Sign up",new_user_registration_path %>
+       </li>
+       <li>
+         <%= link_to"Log in",user_session_path %>
+       </li>
+      <% end %>
+      
     </header>
     <%= yield %>
   </body>
