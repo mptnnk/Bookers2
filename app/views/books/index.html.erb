@@ -1,2 +1,20 @@
+<!--bookers2 books index 投稿した本の一覧画面-->
 <h1>Books#index</h1>
 <p>Find me in app/views/books/index.html.erb</p>
+
+     
+<%= form_with model:@book do |book|%>
+ <h4>New Book</h4>
+ <p>Title</p>
+ <%= book.text_field:title%>
+      
+ <p>Opinion</p>
+ <%= book.text_area:body %><br>
+      
+ <%= book.submit 'Create Book'%>
+<% end %>
+
+<% @books.each do |book|%>
+ <%= book.title %>
+ <%= book.body %>
+<% end %>
