@@ -15,6 +15,9 @@
 <% end %>
 
 <% @books.each do |book|%>
- <%= book.title %>
- <%= book.body %>
+<div>
+ <%= image_tag book.get_image %>
+ <p>Title <%= book.title %></p>
+ <p>Opinion <%= book.body %></p>
+</div>
 <% end %>

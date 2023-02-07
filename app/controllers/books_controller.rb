@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   end
   
   def index
-    @book = Book.new #投稿機能。全ページ共通のため
+    @book = Book.new #投稿機能。全ページ共通で実装されているため、application.htmlで実行したいが現時点ではbooksのindex.htmlで実行中
     @books = Book.all
   end
   
@@ -15,7 +15,6 @@ class BooksController < ApplicationController
     @book.save
     redirect_to books_path
   end
-
 
   def show
     @book = Book.find(params[:id])
