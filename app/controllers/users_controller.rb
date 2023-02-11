@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    
   end
   
   def create #保存機能、投稿が成功したら投稿したidの詳細ページへ
