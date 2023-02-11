@@ -1,7 +1,10 @@
-<!--bookers2 users show ユーザーの詳細画面-->
+<!--bookers2 users show ユーザーの詳細画面 = ログインしたときの画面-->
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
-  <h4>User info</h4>
-  <p>name <%= @user.name %></p>
-  <p>introduction <%= @user.introduction %></p>
+  <!--<h4>User info</h4>-->
+  <!--<%= image_tag @user.get_image %>-->
+  <!--<p>name <%= @user.name %></p>-->
+  <!--<p>introduction <%= @user.introduction %></p>-->
+
+<%= render "users/userinfo" %>

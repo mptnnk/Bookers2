@@ -1,6 +1,6 @@
 #books モデル
 class Book < ApplicationRecord
- has_one_attached:image #userのprofile画像と区別したくてbook_imageにしたらno name errorだった。揃える必要のあるところがあるかも
+ has_one_attached:image #userのprofile画像と区別したくてbook_imageにしたらno name errorだった。でもよく見たら全部プロフィール画像だった
  belongs_to:user
  
  def get_image

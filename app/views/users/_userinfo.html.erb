@@ -1,0 +1,16 @@
+<!--部分テンプレート-->
+<!--user showのuser infoとbook indexの投稿機能をまとめる-->
+<!--違うコントローラーからの引用をどうする？-->
+<h4>User info</h4>
+<%= image_tag @user.get_image %>
+<p>name <%= @user.name %></p>
+<p>introduction <%= @user.introduction %></p>
+
+<%= form_with model:@book do |book|%>
+ <h4>New Book</h4>
+ <p>Title</p>
+ <%= book.text_field:title%>
+ <p>Opinion</p>
+ <%= book.text_area:body %><br>
+ <%= book.submit 'Create Book'%>
+<% end %>
