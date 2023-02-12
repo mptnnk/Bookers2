@@ -1,2 +1,14 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Editing Book</h1>
+
+<%= form_with model:@book do |book|%>
+ <p>Title</p>
+ <%= book.text_field:title %>
+
+ <p>Opinion</p>
+ <%= book.text_area:body %><br>
+
+ <%= book.submit 'Update Book'%>
+ 
+<% end %>
+
+<!--showとBackのリンクを追加する-->

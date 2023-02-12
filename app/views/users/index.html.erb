@@ -1,6 +1,7 @@
 <!--bookers2 users index ユーザーの一覧-->
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>＊Users一覧画面</h1>
+
+<%= render 'userinfo',user:@user %>
 
 <% @users.each do |user|%>
 <div>

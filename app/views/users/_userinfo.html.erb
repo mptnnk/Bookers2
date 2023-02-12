@@ -1,13 +1,13 @@
 <!--部分テンプレート-->
 <!--user showのuser infoとbook indexの投稿機能をまとめる-->
 <!--違うコントローラーからの引用をどうする？-->
-<h4>User info</h4>
-<%= image_tag @user.get_image %>
-<p>name <%= @user.name %></p>
-<p>introduction <%= @user.introduction %></p>
+<h1>User info</h1>
+<%= image_tag user.get_image %>
+<p>name <%= user.name %></p>
+<p>introduction <%= user.introduction %></p>
 
 <%= form_with model:@book do |book|%>
- <h4>New Book</h4>
+ <h1>New Book</h1>
  <p>Title</p>
  <%= book.text_field:title%>
  <p>Opinion</p>
