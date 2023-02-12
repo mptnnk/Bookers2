@@ -7,17 +7,19 @@ class BooksController < ApplicationController
   def index
     @book = Book.new #投稿機能。全ページ共通で実装されているため、application.htmlで実行したいが現時点ではbooksのindex.htmlで実行中
     @books = Book.all
+    @user = current_user
   end
   
   def create #保存機能、投稿が成功したら投稿したidの詳細ページへ
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     @book.save
-    redirect_to books_path(@book.id)
+    redirect_to book_path(@book.id)
   end
 
   def show
     @book = Book.find(params[:id])
+    @user = current_user
   end
 
   def edit

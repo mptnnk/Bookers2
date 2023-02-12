@@ -6,7 +6,7 @@
 <p>name <%= user.name %></p>
 <p>introduction <%= user.introduction %></p>
 
-<%= form_with model:@book do |book|%>
+<%= form_with model:book do |book|%>
  <h1>New Book</h1>
  <p>Title</p>
  <%= book.text_field:title%>

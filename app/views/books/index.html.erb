@@ -1,10 +1,18 @@
 <!--bookers2 books index 投稿した本の一覧画面-->
 <h1>Books</h1>
 
+<%= render 'users/userinfo',user:@user ,book:@book %>
+
 <% @books.each do |book|%>
 <div>
- <%= image_tag book.get_image %>
- <p>Title <%= book.title %></p>
+ <%= link_to user_path(@user.id) do %>
+  <%= image_tag book.get_image %>
+ <% end %>
+ <p>Title
+  <%= link_to book_path(book.id) do %>
+   <%= book.title %>
+  <% end %>
+ </p>
  <p>Opinion <%= book.body %></p>
 </div>
 <% end %>
