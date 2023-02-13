@@ -5,11 +5,11 @@
 
 <h1>Books</h1>
 
-<%= @books.each do |cu_book|%>
+<%= @books.each do |book|%>
  <p>Title
-  <%= link_to book_path(cu_book.id) do %>
-   <%= cu_book.title %>
+  <%= link_to book_path(book.id) do %>
+   <%= book.title %>
   <% end %>
  </p>
- <p>Opinion <%= cu_book.body %></p>
+ <p>Opinion <%= book.body %></p>
 <% end %>

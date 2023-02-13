@@ -11,9 +11,10 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <header>
      <%= link_to"Bookers",root_path %>
-     
       <li>
         <%= link_to"Home",root_path %>
       </li>
@@ -38,7 +39,6 @@
          <%= link_to"Log in",user_session_path %>
        </li>
       <% end %>
-      
     </header>
     
     <main>

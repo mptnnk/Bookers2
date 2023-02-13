@@ -1,11 +1,8 @@
 <!--部分テンプレート-->
-<!--user showのuser infoとbook indexの投稿機能をまとめる-->
-<!--違うコントローラーからの引用をどうする？-->
 <h1>User info</h1>
 <%= image_tag user.get_image %>
 <p>name <%= user.name %></p>
 <p>introduction <%= user.introduction %></p>
-<!--editでintroductionを登録するとエラーはでないが表示されない。-->
 <%= link_to "Edit",edit_user_path(user.id)%>
 
 <%= form_with model:book do |book|%>
