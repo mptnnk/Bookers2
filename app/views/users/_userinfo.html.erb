@@ -5,7 +5,8 @@
 <%= image_tag user.get_image %>
 <p>name <%= user.name %></p>
 <p>introduction <%= user.introduction %></p>
-<!--editページ-->
+<!--editでintroductionを登録するとエラーはでないが表示されない。-->
+<%= link_to "Edit",edit_user_path(user.id)%>
 
 <%= form_with model:book do |book|%>
  <h1>New Book</h1>

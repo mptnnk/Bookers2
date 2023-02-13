@@ -4,6 +4,9 @@
  <p>Name</p>
  <%= user.text_field:name %>
  
+ <p>Image</p>
+ <%= user.file_field :image, accept:"image/*" %>
+ 
  <p>Introduction</p>
  <%= user.text_area:introduction %><br>
  

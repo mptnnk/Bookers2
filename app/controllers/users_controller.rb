@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @books = @user.books
   end
   
   def create #保存機能、投稿が成功したら投稿したidの詳細ページへ
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   
  private
   def user_params
-   params.require(:user).permit(:name,:image)
+   params.require(:user).permit(:name,:image,:introduction)
   end
 
 end

@@ -1,9 +1,15 @@
 <!--bookers2 users show ユーザーの詳細画面 = ログインしたときの画面-->
 <h1>＊Users詳細画面</h1>
 
-  <!--<h4>User info</h4>-->
-  <!--<%= image_tag @user.get_image %>-->
-  <!--<p>name <%= @user.name %></p>-->
-  <!--<p>introduction <%= @user.introduction %></p>-->
-
 <%= render 'userinfo',user:@user,book:@book %>
+
+<h1>Books</h1>
+
+<%= @books.each do |cu_book|%>
+ <p>Title
+  <%= link_to book_path(cu_book.id) do %>
+   <%= cu_book.title %>
+  <% end %>
+ </p>
+ <p>Opinion <%= cu_book.body %></p>
+<% end %>
