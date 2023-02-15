@@ -1,15 +1,21 @@
-<!--部分テンプレート-->
-<h1>User info</h1>
-<%= image_tag user.get_image %>
-<p>name <%= user.name %></p>
-<p>introduction <%= user.introduction %></p>
-<%= link_to "Edit",edit_user_path(user.id)%>
+<!--bookers2 部分テンプレート-->
+<div class="infoarea">
+ <div class="userinfo">
+  <h1>User info</h1>
+  <%= image_tag user.get_image %>
+  <p>name <%= user.name %></p>
+  <p>introduction <%= user.introduction %></p>
+  <%= link_to "Edit",edit_user_path(user.id)%>
+ </div>
 
-<%= form_with model:book do |book|%>
- <h1>New Book</h1>
- <p>Title</p>
- <%= book.text_field:title%>
- <p>Opinion</p>
- <%= book.text_area:body %><br>
- <%= book.submit 'Create Book'%>
-<% end %>
+ <div class="book_post">
+  <%= form_with model:book do |book|%>
+   <h1>New Book</h1>
+   <p>Title</p>
+   <%= book.text_field:title%>
+   <p>Opinion</p>
+   <%= book.text_area:body %><br>
+   <%= book.submit 'Create Book'%>
+  <% end %>
+ </div>
+</div>

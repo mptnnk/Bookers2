@@ -1,12 +1,11 @@
-<!--bookers2 users index ユーザーの一覧-->
-<h1>＊Users一覧画面</h1>
-
+<!--bookers2 users#index ユーザーの一覧-->
 <%= render 'users/userinfo',user:@user ,book:@book %>
 
-<% @users.each do |user|%>
-<div>
- <%= image_tag user.get_image %>
- <p>name <%= user.name %></p>
- <%= link_to "Show",user_path(user.id)%>
+<div class="indexarea">
+ <h1>Users</h1>
+ <% @users.each do |user|%>
+  <%= image_tag user.get_image %>
+  <p>name <%= user.name %></p>
+  <%= link_to "Show",user_path(user.id)%>
+ <% end %>
 </div>
-<% end %>
