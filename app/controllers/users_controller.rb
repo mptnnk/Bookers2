@@ -4,13 +4,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books
   end
-  
-  def create #保存機能、投稿が成功したら投稿したidの詳細ページへ
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    @book.save
-    redirect_to book_path(@book.id)
-  end
 
   def edit
     @user = User.find(params[:id])

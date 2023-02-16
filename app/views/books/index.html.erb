@@ -1,7 +1,6 @@
 <!--bookers2 books#index 投稿した本の一覧画面-->
 <%= render 'users/userinfo',user:@user ,book:@book %>
 
-<div class="indexarea">
  <h1>Books</h1>
  <% @books.each do |book|%>
   <%= link_to user_path(@user.id) do %>
@@ -14,4 +13,3 @@
   </p>
   <p>Opinion <%= book.body %></p>
  <% end %>
-</div>
