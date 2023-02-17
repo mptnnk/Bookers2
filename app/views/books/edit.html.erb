@@ -1,6 +1,15 @@
 <!--bookers2 book edit-->
 <h1>Editing Book</h1>
 
+<% if @book.errors.any? %>
+  <h2><%= @book.errors.count %> error prohibited this ojb from being saved.</h2>
+  <ul>
+   <% @book.errors.full_messages.each do |message|%>
+    <li><%= message %></li>
+   <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model:@book do |book|%>
  <p>Title</p>
  <%= book.text_field:title %>
