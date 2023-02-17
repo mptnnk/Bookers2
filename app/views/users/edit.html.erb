@@ -1,5 +1,13 @@
 <!--bookers2 user edit-->
 <h1>User info</h1>
+<% if @user.errors.any? %>
+ <h2><%= @user.errors.count %>error prohibited this obj being saved.</h2>
+ <ul>
+  <% @user.errors.full_messages.each do |message|%>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
+<% end %>
 
 <%= form_with model:@user do |user|%>
  <p>Name</p>
