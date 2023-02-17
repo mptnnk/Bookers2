@@ -1,26 +1,7 @@
-<!--bookers2 部分テンプレート-->
-
+<!--bookers2 userinfo 部分テンプレート-->
  <div class="userinfo">
   <h1>User info</h1>
   <%= image_tag user.get_image %>
   <p>name <%= user.name %></p>
   <p>introduction <%= user.introduction %></p>
   <%= link_to "Edit",edit_user_path(user.id)%>
- 
- <% if book.errors.any? %>
-  <h2><%= book.errors.count %> error prohibited this book from being saved.</h2>
-  <ul>
-   <% book.errors.full_messages.each do |message|%>
-    <li><%= message %></li>
-   <% end %>
-  </ul>
- <% end %>
-  <%= form_with model:book do |book|%>
-   <h1>New Book</h1>
-   <p>Title</p>
-   <%= book.text_field:title%>
-   <p>Opinion</p>
-   <%= book.text_area:body %><br>
-   <%= book.submit 'Create Book'%>
-  <% end %>
-</div>

@@ -1,5 +1,6 @@
 <!--bookers2 users#show ユーザーの詳細画面 = ログインしたときの画面-->
-<%= render 'userinfo',user:@user,book:@book %>
+<%= render 'userinfo',user:@user %>
+<%= render 'books/booknew',book:@book %>
 
  <h1>Books</h1>
  <% @books.each do |book|%>

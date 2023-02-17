@@ -1,20 +1,21 @@
 <!--bookers2 books#show 本の詳細画面-->
-<%= render 'users/userinfo',user:@user ,book:@book %>
+<%= render 'users/userinfo',user:@user %>
+<%= render 'booknew',book:@book %>
 
 <div class="indexarea">
  <h1>Book detail</h1>
- <%= image_tag @book.user.get_image %>
+ <%= image_tag @bookid.user.get_image %>
  <p>
   <%= link_to user_path(@user.id) do %>
-   <%= @book.user.name %>
+   <%= @bookid.user.name %>
   <% end %>
  </p>
  <p>
-  <%= link_to book_path(@book.id) do %>
-   <%= @book.title %>
+  <%= link_to book_path(@bookid.id) do %>
+   <%= @bookid.title %>
   <% end %>
  </p>
- <p><%= @book.body %></p>
+ <p><%= @bookid.body %></p>
 </div>
-<%= link_to "Edit",edit_book_path(@book.id) %>
-<%= link_to "Destroy", book_path(@book.id), method: :delete,"data-confirm"=>"本当に消しますか？"%>
+<%= link_to "Edit",edit_book_path(@bookid.id) %>
+<%= link_to "Destroy", book_path(@bookid.id), method: :delete,"data-confirm"=>"本当に消しますか？"%>

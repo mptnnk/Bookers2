@@ -1,0 +1,18 @@
+ <% if book.errors.any? %>
+  <h2><%= book.errors.count %> error prohibited this book from being saved.</h2>
+  <ul>
+   <% book.errors.full_messages.each do |message|%>
+    <li><%= message %></li>
+   <% end %>
+  </ul>
+ <% end %>
+ 
+  <%= form_with model:book do |book|%>
+   <h1>New Book</h1>
+   <p>Title</p>
+   <%= book.text_field:title%>
+   <p>Opinion</p>
+   <%= book.text_area:body %><br>
+   <%= book.submit 'Create Book'%>
+  <% end %>
+</div>

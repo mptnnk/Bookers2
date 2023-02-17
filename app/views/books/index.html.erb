@@ -1,5 +1,6 @@
 <!--bookers2 books#index 投稿した本の一覧画面-->
-<%= render 'users/userinfo',user:@user ,book:@book %>
+<%= render 'users/userinfo',user:@user %>
+<%= render 'booknew',book:@book %>
 
  <h1>Books</h1>
  <% @books.each do |book|%>
