@@ -1,2 +1,9 @@
-<h1>welcome to Bookers!!</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<!--Bookersの文字の前には本のロゴを入れる-->
+<h1 class="logo">welcome to <strong>Bookers!!</strong></h1>
+
+<p>in Bookers,</p>
+<p>you can share and exchange your opinions , inpressions , and emotions</p>
+<p>about various books!</p>
+
+<%= link_to "Log in",user_session_path %><br>
+<%= link_to "Sign up",new_user_registration_path %>

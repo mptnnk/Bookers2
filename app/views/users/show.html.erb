@@ -5,6 +5,7 @@
  <h1>Books</h1>
  <%= link_to user_path(@user.id) do %>
   <%= image_tag @user.get_image %>
+  
  <% end %>
  <% @books.each do |book|%>
   <p>Title
