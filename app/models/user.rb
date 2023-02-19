@@ -1,4 +1,4 @@
-# bookers2 users mode
+# bookers2 users model
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many:books,dependent: :destroy
-  
+
   validates :name,length: {minimum:2, maximum:20}
 
   has_one_attached:image
@@ -18,5 +18,5 @@ class User < ApplicationRecord
   end
   image
  end
-  
+
 end

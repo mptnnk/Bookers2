@@ -1,8 +1,6 @@
 <!--bookers2 userinfo 部分テンプレート-->
-<div class="container">
- <div class="col-md-3">
-  <h1>User info</h1>
-  <%= image_tag user.get_image %>
+<h2>User info</h2>
+ <%= image_tag user.get_image %>
   <table class="table">
    <tbody>
     <tr>
@@ -16,9 +14,7 @@
    </tbody>
   </table>
   <div class="row">
-   <%= link_to edit_user_path(user.id),class:'btn btn-sm btn-block btn-outline-secondary mb-3' do %>
+  <%= link_to edit_user_path(user.id),class:'btn btn-sm btn-block btn-outline-secondary mb-3' do %>
     <i class="fas fa-user-cog"></i>
-   <% end %>
+ <% end %>
   </div>
- </div>
-</div>

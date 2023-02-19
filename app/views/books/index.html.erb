@@ -1,8 +1,15 @@
 <!--bookers2 books#index 投稿した本の一覧画面-->
+<div class="container">
+ <div class="row">
+
+ </div>
+</div>
+<%= render 'books/bookerror',book:@book %>
 <%= render 'users/userinfo',user:@user %>
 <%= render 'booknew',book:@book %>
 
- <h1>Books</h1>
+<div class="col-md-8 offset-md-1">
+ <h2>Books</h2>
  <% @books.each do |book|%>
   <%= link_to user_path(@user.id) do %>
    <%= image_tag book.user.get_image %>
@@ -14,3 +21,4 @@
   </p>
   <p>Opinion <%= book.body %></p>
  <% end %>
+</div>
