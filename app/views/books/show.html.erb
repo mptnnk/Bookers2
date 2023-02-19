@@ -14,7 +14,7 @@
      <tr>
       <td>
        <%= link_to user_path(@user.id) do %>
-        <%= image_tag @bookid.user.get_profile_mage,size:'100x100' %><br>
+        <%= image_tag @bookid.user.get_profile_image,size:'100x100' %><br>
         <%= @bookid.user.name %>
        <% end %>
       </td>
@@ -24,8 +24,15 @@
        <% end %>
       </td>
       <td><%= @bookid.body %></td>
-      <td><%= link_to "Edit",edit_book_path(@bookid.id),class:'btn btn-success btn-sm'%></td>
-      <td><%= link_to "Destroy",book_path(@bookid.id),method: :delete,"data-confirm"=>"本当に消しますか？",class:'btn btn-danger btn-sm'%></td>
+      <td>
+       <% if @bookid.user == current_user %>
+        <%= link_to "Edit",edit_book_path(@bookid.id),class:'btn btn-success btn-sm'%>
+       <% end %>
+      </td>
+      <td>
+       <% if @bookid.user == current_user %>
+        <%= link_to "Destroy",book_path(@bookid.id),method: :delete,"data-confirm"=>"本当に消しますか？",class:'btn btn-danger btn-sm'%></td>
+       <% end %>
      </tr>
     </table>
    </div>
