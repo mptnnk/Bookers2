@@ -1,3 +1,4 @@
+# bookers2 books controller
 class BooksController < ApplicationController
   
   def new

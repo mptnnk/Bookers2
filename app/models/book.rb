@@ -1,4 +1,4 @@
-#books モデル
+#bookers2 books model
 class Book < ApplicationRecord
  belongs_to:user
  validates :title,presence:true

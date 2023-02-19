@@ -1,3 +1,4 @@
+# bookers2 users controller
 class UsersController < ApplicationController
 
   def show
