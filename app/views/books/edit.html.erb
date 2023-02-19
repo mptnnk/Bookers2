@@ -1,5 +1,6 @@
-<!--bookers2 book edit-->
-<h1>Editing Book</h1>
+<!--bookers2 books#edit-->
+<div class="container">
+ <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
   <h2><%= @book.errors.count %> error prohibited this ojb from being saved.</h2>
@@ -11,15 +12,18 @@
 <% end %>
 
 <%= form_with model:@book do |book|%>
- <p>Title</p>
- <%= book.text_field:title %>
-
- <p>Opinion</p>
- <%= book.text_area:body %><br>
-
- <%= book.submit 'Update Book'%>
- 
+ <div class="form-group">
+  <label for="book_title">Title</label>
+  <%= book.text_field:title,class:'form-control book_title'%>
+ </div>
+ <div class="form-group">
+  <label for="book_opinion">Opinion</label>
+  <%= book.text_area:body,class:'form-control book_body'%>
+ </div>
+ <div class="form-group">
+  <%= book.submit 'Update Book',class:'btn btn-success'%>
+ </div>
 <% end %>
 
-<%= link_to "Show",book_path(@book.id)%>
-<%= link_to "Back",books_path %>
+<%= link_to "Show",book_path(@book.id) %> | <%= link_to"Back",books_path %>
+</div>
