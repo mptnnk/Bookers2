@@ -21,7 +21,7 @@
       <td>
        <% unless @user.books == 0 %>
          <%= link_to user_path(@user.id) do %>
-          <%= image_tag @user.get_image,size:'100x100' %>
+          <%= image_tag @user.get_profile_image,size:'100x100' %>
          <% end %>
         <% else %>
        <% end %>
