@@ -3,11 +3,13 @@
 <%= render 'books/booknew',book:@book %>
 
  <h1>Books</h1>
- <%= link_to user_path(@user.id) do %>
-  <%= image_tag @user.get_image %>
-  
- <% end %>
  <% @books.each do |book|%>
+  <% unless @user.books == 0 %>
+   <%= link_to user_path(@user.id) do %>
+    <%= image_tag @user.get_image %>
+   <% end %>
+   <% else %>
+  <% end %>
   <p>Title
    <%= link_to book_path(book.id) do %>
     <%= book.title %>

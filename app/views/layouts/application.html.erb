@@ -10,42 +10,83 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column vh-100">
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-    
-    <header class="shadow-sm">
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-       <a class="navbar-brand"><%= link_to"Bookers",root_path,class:'text-white' %></a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-         <% if user_signed_in? %>
-          <li><a class="nav-link text-light" href="/users/:id"><i class="fas fa-home"></i>Home</a></li>
-          <li><a class="nav-link text-light" href="/users"><i class="fas fa-users"></i>Users</a></li>
-          <li><a class="nav-link text-light" href="/books"><i class="fas fa-book-open"></i>Books</a></li>
-          <li><a class="nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
-         <% else %>
-          <li><a class="nav-link text-light" href="/"><i class="fas fa-home"></i>Home</a></li>
-          <li><a class="nav-link text-light" href="/about"><i class="fas fa-link"></i>About</a></li>
-          <li><a class="nav-link text-light" href="/users/sign_up"><i class="fas fa-user-plus"></i>Sign up</a></li>
-          <li><a class="nav-link text-light" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i>Log in</a></li>
-         <% end %>
-        </ul>
-       </div>
+  <body class="d-flex flex-column">
+   
+   <header class="shadow-sm mt-0">
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+     <div class="container">
+      <a class="navbar-brand"><%= link_to"Bookers",root_path,class:'text-white' %></a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+       <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+        <!--サインイン状態のナビゲーションバーリンク-->
+         <li class="nav-link">
+          <%= link_to user_path(@user.id),class:'text-light' do %>
+           <i class="fas fa-home"></i>Home
+          <% end %>
+         </li>
+         <li class="nav-link">
+          <%= link_to user_path,class:'text-light' do %>
+           <i class="fas fa-users"></i>Users
+          <% end %>
+         </li>
+         <li class="nav-link">
+          <%= link_to book_path,class:'text-light' do %>
+           <i class="fas fa-book-open"></i>Books
+          <% end %>
+         </li>
+         <li class="nav-link">
+          <%= link_to destroy_user_session_path,class:'text-light',method: :delete do %>
+           <i class="fas fa-sign-in-alt"></i>Log out
+          <% end %>
+         </li>
+        <% else %>
+        <!--サインアウト状態のナビゲーションバーリンク-->
+         <li class="nav-link">
+          <%= link_to root_path,class:'text-light' do %>
+           <i class="fas fa-home"></i>Home
+          <% end %>
+         </li>
+         <li class="nav-link">
+          <%= link_to about_path,class:'text-light' do %>
+           <i class="fas fa-link"></i>About
+          <% end %>
+         </li>
+         <li class="nav-link">
+          <%= link_to new_user_registration_path,class:'text-light' do %>
+           <i class="fas fa-user-plus"></i>Sign up
+          <% end %>
+         </li>
+         <li class="nav-link">
+          <%= link_to user_session_path,class:'text-light' do %>
+           <i class="fas fa-sign-in-alt"></i>Log in
+          <% end %>
+         </li>
+        <% end %>
+       </ul>
       </div>
-     </nav>
-    </header>
+     </div>
+    </nav>
+   </header>
     
     <main>
+     <p class="notice"><%= notice %></p>
      <%= yield %>
     </main>
     
     <footer>
+     <div class='container mt-5'>
+      <div class='row'>
+       <div class='mx-auto'>
         <p>CopyRight Infratop.inc</p>
+       </div>
+      </div>
+     </div>
     </footer>
 
   </body>
