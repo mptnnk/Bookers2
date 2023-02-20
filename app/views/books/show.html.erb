@@ -1,16 +1,15 @@
 <!--bookers2 books#show 本の詳細画面-->
-<div class="container">
- <div class="row row-cols-2">
-  <div class="col">
-   <%= render 'books/bookerror',book:@book %>
+<%= render 'books/bookerror',book:@book %>
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-3">
    <%= render 'users/userinfo',user:@user %>
    <%= render 'booknew',book:@book %>
   </div>
-  
-  <div class="col">
-   <div class="col">
+
+  <div class="col-md-8 offset-md-1">
+   <h2>Book detail</h2>
     <table class="table">
-     <h2>Book detail</h2>
      <tr>
       <td>
        <%= link_to user_path(@user.id) do %>
@@ -25,7 +24,9 @@
       </td>
       <td><%= @bookid.body %></td>
       <td>
+       <% if @bookid.user == current_user %>
         <%= link_to "Edit",edit_book_path(@bookid.id),class:'btn btn-success btn-sm'%>
+       <% end %>
       </td>
       <td>
        <% if @bookid.user == current_user %>

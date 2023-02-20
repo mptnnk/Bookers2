@@ -1,7 +1,11 @@
 <!--bookers2 userinfo 部分テンプレート-->
 <h2>User info</h2>
- <%= image_tag user.get_profile_image,size:'100x100' %>
-  <table class="table">
+ <table class="table">
+   <thead>
+    <tr>
+     <%= image_tag user.get_profile_image,size:'100x100' %>
+    </tr>
+   </thead>
    <tbody>
     <tr>
      <th>name</th>
@@ -11,10 +15,10 @@
      <th>introduction</th>
      <th><%= user.introduction %></th>
     </tr>
+    <th colspan="2">
+     <%= link_to edit_user_path(user.id),class:'btn btn-sm btn-block btn-outline-secondary mb-3' do %>
+      <i class="fas fa-user-cog"></i>
+　   <% end %>
+    </th>
    </tbody>
   </table>
-  <div class="row">
-   <%= link_to edit_user_path(user.id),class:'btn btn-sm btn-block btn-outline-secondary mb-3' do %>
-    <i class="fas fa-user-cog"></i>
-　 <% end %>
-  </div>

@@ -6,19 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-　　
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/a30ba0c1da.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="d-flex flex-column">
-   
+
    <header class="shadow-sm mt-0">
     <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
      <div class="container">
-      <a class="navbar-brand"><%= link_to"Bookers",root_path,class:'text-white' %></a>
-      
+      <a class="navbar-brand" href="/"><span>Bookers</span></a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,9 +44,10 @@
          </li>
          <li class="nav-link">
           <%= link_to destroy_user_session_path,class:'text-light',method: :delete do %>
-           <i class="fas fa-sign-in-alt"></i>Log out
+           <i class="fas fa-sign-out-alt"></i>Log out
           <% end %>
          </li>
+
         <% else %>
         <!--サインアウト状態のナビゲーションバーリンク-->
          <li class="nav-link">
@@ -75,12 +76,12 @@
      </div>
     </nav>
    </header>
-    
+
     <main>
-     <p class="notice"><%= notice %></p>
+     <p id="notice"><%= notice %></p>
      <%= yield %>
     </main>
-    
+
     <footer>
      <div class='container mt-5'>
       <div class='row'>
