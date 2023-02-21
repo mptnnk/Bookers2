@@ -9,8 +9,8 @@
    <% end %>
   </ul>
  <% end %>
- 
- <%= form_with model:@user do |user|%>
+
+ <%= form_with model:@user,multipart: true do |user|%>
  <div class="form-group">
   <label for="user_name">Name</label>
   <%= user.text_field:name,class:'form-control user_name'%>
@@ -26,5 +26,5 @@
  <div class="form-group">
   <%= user.submit 'Update User',class:'btn btn-secondary'%>
  </div>
-<% end %> 
+<% end %>
 </div>
